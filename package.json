@@ -1,0 +1,27 @@
+{
+  "name": "docuextract-local",
+  "version": "1.0.0",
+  "description": "Self-hosted local deployment of DocuExtract Gateway with Docker",
+  "scripts": {
+    "start": "docker-compose up -d",
+    "stop": "docker-compose down",
+    "build": "docker-compose build",
+    "logs": "docker-compose logs -f",
+    "shell": "docker-compose exec app sh"
+  },
+  "keywords": [
+    "docker",
+    "local",
+    "self-hosted",
+    "document",
+    "extraction"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^9.0.0",
+    "yaml": "^2.3.4"
+  }
+}

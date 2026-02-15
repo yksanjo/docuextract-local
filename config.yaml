@@ -1,0 +1,58 @@
+# DocuExtract Gateway Configuration
+
+app:
+  name: "DocuExtract Gateway"
+  port: 3000
+  host: "0.0.0.0"
+
+# Provider Configuration
+providers:
+  langextract:
+    enabled: true
+    baseUrl: "http://langextract:8000"
+    timeout: 30000
+    pricePerPage: 0.001
+    
+  aws:
+    enabled: false
+    region: "us-east-1"
+    timeout: 60000
+    pricePerPage: 0.015
+    
+  azure:
+    enabled: false
+    endpoint: "https://your-resource.cognitiveservices.azure.com"
+    timeout: 60000
+    pricePerPage: 0.005
+
+# Routing Rules
+routing:
+  invoice:
+    - langextract
+    - aws
+  receipt:
+    - langextract
+    - aws
+  form:
+    - langextract
+    - aws
+  contract:
+    - langextract
+  id_document:
+    - langextract
+    - aws
+  generic:
+    - langextract
+
+# Volume Discounts
+volumeDiscounts:
+  - maxPages: 1000
+    discount: 0
+  - maxPages: 10000
+    discount: 10
+  - maxPages: 50000
+    discount: 20
+  - maxPages: 100000
+    discount: 30
+  - maxPages: null
+    discount: 40
