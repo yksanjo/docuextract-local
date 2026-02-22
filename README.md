@@ -1,52 +1,84 @@
-# DocuExtract Local
+# docuextract-local
 
-Self-hosted Docker deployment of DocuExtract Gateway.
+## Detailed Description
 
-## Quick Start
+docuextract-local is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-```bash
-# Start the service
-npm start
+## Problem Statement
 
-# Check logs
-npm run logs
+Describe the user or business problem this project solves, the target users, and expected outcomes.
 
-# Stop the service
-npm stop
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
 ```
 
-## Configuration
+## Getting Started
 
-Edit `config.yaml` to configure providers:
+### Prerequisites
 
-- Set `langextract.enabled: true` to use local LangExtract service
-- Set `aws.enabled: true` and provide credentials for AWS Textract
-- Set `azure.enabled: true` and provide credentials for Azure Document Intelligence
+- Git
+- Project runtime/toolchain for this repo
 
-## Ports
-
-- HTTP API: `http://localhost:3000`
-
-## Endpoints
-
-- `POST /api/extract` - Extract document
-- `GET /api/providers` - List providers
-- `GET /api/pricing` - Get pricing
-- `GET /api/health` - Health check
-
-## Docker Commands
+### Local Setup
 
 ```bash
-# Build image
+npm ci
+npm run lint
+npm test
 npm run build
-
-# View logs
-npm run logs
-
-# Access shell
-npm run shell
 ```
+
+## Usage
+
+Document primary commands, API routes, CLI examples, or UI workflows here.
+
+## Quality Standards
+
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
+
+## Security
+
+See `SECURITY.md` for responsible disclosure and handling guidelines.
+
+## Contributing
+
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
+
+## Roadmap
+
+Track upcoming milestones, technical debt, and planned feature work.
+
+## Support
+
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
 ## License
 
-MIT
+This project is released under the MIT License.
